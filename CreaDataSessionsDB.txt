@@ -1,0 +1,15 @@
+CREATE TABLE data_sessions(
+  Chat_id TEXT,
+  Comune TEXT,
+  My_Lat DOUBLE,
+  My_Lon DOUBLE,
+  Search_Distance INTEGER
+);
+
+CREATE TABLE access_numbers(
+  Counter DOUBLE
+);
+
+ INSERT INTO access_numbers (Counter) VALUES (0);
+.quit
+
