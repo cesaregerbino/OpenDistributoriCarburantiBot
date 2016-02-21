@@ -9,7 +9,7 @@ function SearchFuelStation($comune, $carburante, $lat, $lon, $dist, $my_lat, $my
    $base_path = BASE_PATH;
 
    # DB Connection ...
-   $db = new SQLite3($base_path.'/OpenDistributoriCarburantiBot/PrezziCarburanti');
+   $db = new SQLite3($base_path.'/PrezziCarburanti');
 
    # Loading SpatiaLite as an extension ...
    $db->loadExtension('mod_spatialite.so');
@@ -133,17 +133,17 @@ if (!empty($comune))
 
                   if (!empty($my_lat) && !empty($my_lon)) 
                      {
-                      $longUrl = $base_url."/Telegram/OpenDistributoriCarburantiBot/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=0";
+                      $longUrl = $base_url."/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=0";
                       $shortUrl = CompactUrl($longUrl);
                       $data .= "Descrizione Percorso: ".$shortUrl;                  
                       $data .= "\n";
 
-                      $longUrl = $base_url."/Telegram/OpenDistributoriCarburantiBot/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."map_type=2";
+                      $longUrl = $base_url."/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."map_type=2";
                       $shortUrl = CompactUrl($longUrl);
                       $data .= "Percorso su mappa 2D: ".$shortUrl;                  
                       $data .= "\n";
 
-                      $longUrl = $base_url."/Telegram/OpenDistributoriCarburantiBot/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."map_type=3";
+                      $longUrl = $base_url."/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."map_type=3";
                       $shortUrl = CompactUrl($longUrl);
                       $data .= "Percorso su mappa 3D: ".$shortUrl;                  
                       $data .= "\n";
@@ -194,17 +194,17 @@ if (!empty($lat) && !empty($lon) && !empty($dist))
                  $data .= "Mappa: ".$shortUrl;                  
                  $data .= "\n";
 
-                 $longUrl = $base_url."/Telegram/OpenDistributoriCarburantiBot/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=0";
+                 $longUrl = $base_url."/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=0";
                  $shortUrl = CompactUrl($longUrl);
                  $data .= "Descrizione Percorso: ".$shortUrl;                  
                  $data .= "\n";
 
-                 $longUrl = $base_url."/Telegram/OpenDistributoriCarburantiBot/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=2";
+                 $longUrl = $base_url."/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=2";
                  $shortUrl = CompactUrl($longUrl);
                  $data .= "Percorso su mappa 2D: ".$shortUrl;                  
                  $data .= "\n";
 
-                 $longUrl = $base_url."/Telegram/OpenDistributoriCarburantiBot/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=3";
+                 $longUrl = $base_url."/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=3";
                  $shortUrl = CompactUrl($longUrl);
                  $data .= "Percorso su mappa 3D: ".$shortUrl;                  
                  $data .= "\n";
@@ -252,17 +252,17 @@ if (!empty($lat) && !empty($lon) && !empty($dist))
                  $data .= "Mappa: ".$shortUrl;                  
                  $data .= "\n";
 
-                 $longUrl = $base_url."/Telegram/OpenDistributoriCarburantiBot/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=0";
+                 $longUrl = $base_url."/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=0";
                  $shortUrl = CompactUrl($longUrl);
                  $data .= "Descrizione Percorso: ".$shortUrl;                  
                  $data .= "\n";
 
-                 $longUrl = $base_url."/Telegram/OpenDistributoriCarburantiBot/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=2";
+                 $longUrl = $base_url."/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=2";
                  $shortUrl = CompactUrl($longUrl);
                  $data .= "Percorso su mappa 2D: ".$shortUrl;                  
                  $data .= "\n";
 
-                 $longUrl = $base_url."/Telegram/OpenDistributoriCarburantiBot/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=3";
+                 $longUrl = $base_url."/RenderRoute.php?lat_from=".$lat."&lon_from=".$lon."&lat_to=".$row['Latitudine']."&lon_to=".$row['Longitudine']."&map_type=3";
                  $shortUrl = CompactUrl($longUrl);
                  $data .= "Percorso su mappa 3D: ".$shortUrl;                  
                  $data .= "\n";

@@ -48,7 +48,7 @@
 
         //## Aggiorno il contatore degli accessi ...
         $access_counter = 0;
-        $db_data_sessions = new SQLite3($base_path.'/OpenDistributoriCarburantiBot/DataSessionsDB');
+        $db_data_sessions = new SQLite3($base_path.'/DataSessionsDB');
         $q="SELECT * FROM access_numbers";
         try {
              $stmt = $db_data_sessions->prepare($q);
@@ -115,7 +115,7 @@ Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx";
 		}
         elseif ((strtoupper($text) == "500") OR (strtoupper($text) == "1000") OR (strtoupper($text) == "2000") OR (strtoupper($text) == "3000"))  {
                  //## Accedo al db di sessione per recuperare il dato del comune di interesse per l'id di chat ...
-                 $db_data_sessions = new SQLite3($base_path.'/OpenDistributoriCarburantiBot/DataSessionsDB');
+                 $db_data_sessions = new SQLite3($base_path.'/DataSessionsDB');
                  $q="SELECT ds.Chat_id, ds.Comune, ds.My_Lat, ds.My_Lon, ds.Search_Distance
                      FROM data_sessions as ds
                      WHERE ds.Chat_id = :Chat_id";
@@ -149,7 +149,7 @@ Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx";
         //elseif (strpos($text,'->')){
         elseif ((strtoupper($text) == "BENZINA") OR (strtoupper($text) == "GASOLIO") OR (strtoupper($text) == "GPL") OR (strtoupper($text) == "METANO") OR (strtoupper($text) == "QUALUNQUE"))  {
                 //## Accedo al db di sessione per recuperare il dato del comune di interesse per l'id di chat ...
-                $db_data_sessions = new SQLite3($base_path.'/OpenDistributoriCarburantiBot/DataSessionsDB');
+                $db_data_sessions = new SQLite3($base_path.'/DataSessionsDB');
                 $q="SELECT ds.Chat_id, ds.Comune, ds.My_Lat, ds.My_Lon, ds.Search_Distance
                     FROM data_sessions as ds
                     WHERE ds.Chat_id = :Chat_id";
@@ -307,7 +307,7 @@ Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx";
                                      );
 
                     //## Accedo al db di sessione per memorizzare i dati per il'id di chat  ...
-                    $db_data_sessions = new SQLite3($base_path.'/OpenDistributoriCarburantiBot/DataSessionsDB');
+                    $db_data_sessions = new SQLite3($base_path.'/DataSessionsDB');
 
                     //## Accedo al db di sessione per eliminare i dati di sessione per di interesse per l'id di chat ...
                     $q="DELETE FROM data_sessions WHERE Chat_id = :Chat_id";
