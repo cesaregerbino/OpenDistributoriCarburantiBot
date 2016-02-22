@@ -24,7 +24,6 @@ CREATE TABLE prezzo_alle_8(
 );
 .mode csv
 .separator ;
-.import /var/www/html/cesarefortelegram/Telegram/OpenDistributoriCarburantiBot/Dati/anagrafica.csv anagrafica_impianti_attivi
 .import <BASE_PATH>/OpenDistributoriCarburantiBot/Dati/anagrafica.csv anagrafica_impianti_attivi
 SELECT AddGeometryColumn('anagrafica_impianti_attivi','geometry',4326,'POINT',2);
 UPDATE anagrafica_impianti_attivi SET geometry = GeomFromText('POINT('||"Longitudine"||' '||"Latitudine"||')',4326);

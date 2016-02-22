@@ -103,11 +103,12 @@ Per indicare il Comune di interesse e' sufficiente scriverne il nome.\n
 Verra' interrogata una copia del DataBase openData del Ministero dello Sviluppo Economico (rif. http://www.sviluppoeconomico.gov.it/index.php/it/open-data/elenco-dataset/2032336-carburanti-prezzi-praticati-e-anagrafica-degli-impianti),utilizzabile con licenza iodl2.0 (rif. http://www.dati.gov.it/iodl/2.0/).\n
 I dati sono aggiornati giornalmente dalle ore 9.00.\n
 E' possibile visualizzare questo messaggio in qualsiasi momento scrivendo /start.\n
-Le mappe utilizzate sono quelle derivate dai dati di OpenStreetMap e OSMBuildings con licenza ?????\n
-Il calcolo dei percorsi viene realizzato avvalendosi del servizio ???? di MapQuest con licenza ??????\n
-L'abbreviazione delle url viene realizzata avvalendosi del servizio ???? di Google con licenza ??????\n
+Le mappe utilizzate sono quelle derivate dai dati di OpenStreetMap (rif. http://www.openstreetmap.org/) e OSMBuildings (rif. http://www.osmbuildings.org/).\n
+Il calcolo dei percorsi viene realizzato avvalendosi del servizio di routing di MapQuest (rif. https://developer.mapquest.com/products/directions)\n
+L'abbreviazione delle url viene realizzata avvalendosi del servizio Google URL Shortener (rif. https://goo.gl/)\n
 Questo bot e' stato realizzato a titolo sperimentale  da Cesare Gerbino (cesare.gerbino@gmail.com)\n
-Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx";
+Il codice dell'applicazione è disponibile al seguente url https://github.com/cesaregerbino/OpenDistributoriCarburantiBot con licenza Licenza MIT Copyright (c) [2014] (rif. https://it.wikipedia.org/wiki/Licenza_MIT)\n
+Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx\n";
 
 		$content = array('chat_id' => $chat_id, 'text' => $reply,'disable_web_page_preview'=>true);
 		$telegram->sendMessage($content);
