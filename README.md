@@ -37,6 +37,7 @@ Schematicamente l'architettura della soluzione è la seguente:
 
 ![alt tag](https://github.com/cesaregerbino/OpenDistributoriCarburantiBot/blob/master/Doc/DistributoriCarburanti.png)
 
+
 Nel diagramma sono citati i vari componenti del sistema che:
 
 * è ospitato su una macchina Ubuntu 14.0.4 LTS
@@ -65,14 +66,14 @@ Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx.
 
 ## Note per l'utilizzo del codice
 
-E' necessario impostare il valore di alcune variabili di configurazione nel file settings_t.php che devono riflettere il posizionamento su file system della directory OpenDistributoriCarburantiBot. 
+E' necessario impostare il valore di alcune variabili di configurazione nel file 'settings_t.php' che devono riflettere il posizionamento su file system della directory OpenDistributoriCarburantiBot. 
 
 Ad esempio se tale cartella è posizionata in 
 
 /var/www/html/Telegram/OpenDistributoriCarburantiBot
 
-* la variabile BASE_PATH assumerà il valore /var/www/html/Telegram/OpenDistributoriCarburantiBot
-* la variabile BASE_URL assumerà il valore http://www.mysite.com/Telegram/OpenDistributoriCarburantiBot
+* la variabile BASE_PATH assumerà il valore '/var/www/html/Telegram/OpenDistributoriCarburantiBot'
+* la variabile BASE_URL assumerà il valore 'http://www.mysite.com/Telegram/OpenDistributoriCarburantiBot'
 
 E' necessario disporre di
 * una chiave per l'utilizzo delle API di Google Shortner
@@ -84,7 +85,7 @@ Nel pacchetto è già reso disponibile un database alimentato (PrezziCarburanti)
 
 CreaPrezziCarburanti.sh
 
-disponibile nella sottocartella Dati
+disponibile nella sottocartella 'Datiì
 
 
 ## Credits
@@ -96,6 +97,9 @@ Ringraziamenti e credits vanno a:
 * Fabrizio Massara per la pazienza e supporto  nonche', per la condivisione del server su cui sta' girando il codice del bot in produzione
 
 
+## Riferimenti e licenza d'uso
+
 Questo bot e' stato realizzato a titolo sperimentale  da Cesare Gerbino (cesare.gerbino@gmail.com).
+
 Il codice dell'applicazione e' disponibile con licenza Licenza MIT Copyright (c) [2014] (rif. https://it.wikipedia.org/wiki/Licenza_MIT)
 
