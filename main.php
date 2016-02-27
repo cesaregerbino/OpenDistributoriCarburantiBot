@@ -96,20 +96,39 @@
 
 	if (strtoupper($text) == "/START") {
 		$reply = "Benvenuta/o! Quest'applicazione Le permettera' di ricercare il distributore di carburante piu' economico nell intorno di un punto di Suo interesse o all'interno dell'area in un Comune italiano.\n 
-E' necessario che mi indichi la Sua posizione corrente (controlli che sia attiva la geolocalizzazione sul suo dispositivo ...); in caso contrario non saro' in grado di individuare la Sua posizione e non potro' calcolare il percorso per farLe raggiungere il distributore di Suo interesse.\n
 Se non puo', o non vuole, fornire la Sua attuale posizione provero' lo stesso a darLe una indicazione: mi fornisca il nome di un Comune italiano e Le indichero' il/i distributori piu' economici all'interno del suo territorio e li potra' comunque visualizzare su mappa.\n
 Per fornire la Sua posizione e' sufficiente cliccare sulla graffetta  e poi selezionare l'opzione 'Posizione'.\n
 Per indicare il Comune di interesse e' sufficiente scriverne il nome.\n
-Verra' interrogata una copia del DataBase openData del Ministero dello Sviluppo Economico (rif. http://www.sviluppoeconomico.gov.it/index.php/it/open-data/elenco-dataset/2032336-carburanti-prezzi-praticati-e-anagrafica-degli-impianti),utilizzabile con licenza iodl2.0 (rif. http://www.dati.gov.it/iodl/2.0/).\n
+Verra' interrogata una copia del DataBase OpenData del Ministero dello Sviluppo Economico (rif. http://www.sviluppoeconomico.gov.it/index.php/it/open-data/elenco-dataset/2032336-carburanti-prezzi-praticati-e-anagrafica-degli-impianti),utilizzabile con licenza iodl2.0 (rif. http://www.dati.gov.it/iodl/2.0/).\n
 I dati sono aggiornati giornalmente dalle ore 9.00.\n
 E' possibile visualizzare questo messaggio in qualsiasi momento scrivendo /start.\n
+Altri comandi disponibili sono /info e /credits.\n
+Questo bot e' stato realizzato a titolo sperimentale  da Cesare Gerbino (cesare.gerbino@gmail.com)\n
+Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx\n";
+		$content = array('chat_id' => $chat_id, 'text' => $reply,'disable_web_page_preview'=>true);
+		$telegram->sendMessage($content);
+		$log=$today. ";new chat started;" .$chat_id. "\n";
+		}
+	elseif (strtoupper($text) == "/CREDITS") {
+		$reply = "Ringraziamenti e credits vanno a:\n
+Stefano Sabatini, per il suo lavoro iniziale da cui ho tratto spunto per l'idea\n
+Matteo Tempestini, Francesco (Piersoft) Paolicelli e Gabriele Grillo da cui ho tratto il codice inziale e per il loro supporto via mail\n
+Alessandro Furieri, per il suo grandissimo lavoro su Spatialite, data base open source che ho usato come tool per memorizzare i dati georiferiti, e per il suo paziente supporto online\n
+Fabrizio Massara per la pazienza e supporto  nonche', per la condivisione del server su cui sta' girando il codice del bot in produzione";
+		$content = array('chat_id' => $chat_id, 'text' => $reply,'disable_web_page_preview'=>true);
+		$telegram->sendMessage($content);
+		$log=$today. ";new chat started;" .$chat_id. "\n";
+		}
+	elseif (strtoupper($text) == "/INFO") {
+		$reply = "Ecco alcune brevi informazioni tecniche.\n
+I dati dei distributori sono forniti dal DataBase OpenData del Ministero dello Sviluppo Economico (rif. http://www.sviluppoeconomico.gov.it/index.php/it/open-data/elenco-dataset/2032336-carburanti-prezzi-praticati-e-anagrafica-degli-impianti),utilizzabile con licenza iodl2.0 (rif. http://www.dati.gov.it/iodl/2.0/).\n
+I dati sono ospitati su un database open source SQLITE3 (rif. https://www.sqlite.org/ ) + SpatiaLite (rif. http://www.gaia-gis.it/gaia-sins/)\n 
 Le mappe utilizzate sono quelle derivate dai dati di OpenStreetMap (rif. http://www.openstreetmap.org/) e OSMBuildings (rif. http://www.osmbuildings.org/).\n
 Il calcolo dei percorsi viene realizzato avvalendosi del servizio di routing di MapQuest (rif. https://developer.mapquest.com/products/directions)\n
-L'abbreviazione delle url viene realizzata avvalendosi del servizio Google URL Shortener (rif. https://goo.gl/)\n
-Questo bot e' stato realizzato a titolo sperimentale  da Cesare Gerbino (cesare.gerbino@gmail.com)\n
-Il codice dell'applicazione è disponibile al seguente url https://github.com/cesaregerbino/OpenDistributoriCarburantiBot con licenza Licenza MIT Copyright (c) [2014] (rif. https://it.wikipedia.org/wiki/Licenza_MIT)\n
+L'abbreviazione delle url viene realizzata avvalendosi del servizio Google URL Shortener (rif. https://goo.gl/)\n 
+Il codice dell'applicazione e' disponibile al seguente url https://github.com/cesaregerbino/OpenDistributoriCarburantiBot con licenza Licenza MIT Copyright (c) [2014] (rif. https://it.wikipedia.org/wiki/Licenza_MIT)\n
+I comandi disponibili sono: /start, /info e /credits.\n
 Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx\n";
-
 		$content = array('chat_id' => $chat_id, 'text' => $reply,'disable_web_page_preview'=>true);
 		$telegram->sendMessage($content);
 		$log=$today. ";new chat started;" .$chat_id. "\n";
