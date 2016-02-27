@@ -63,11 +63,35 @@ Nel diagramma sono anche illustrati i passi delle diverse operazioni coinvolte e
 Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx.
 
 
+## Note per l'utilizzo del codice
+
+E' necessario impostare il valore di alcune variabili di configurazione nel file settings_t.php che devono riflettere il posizionamento su file system della directory OpenDistributoriCarburantiBot. 
+
+Ad esempio se tale cartella è posizionata in 
+
+/var/www/html/Telegram/OpenDistributoriCarburantiBot
+
+* la variabile BASE_PATH assumerà il valore /var/www/html/Telegram/OpenDistributoriCarburantiBot
+* la variabile BASE_URL assumerà il valore http://www.mysite.com/Telegram/OpenDistributoriCarburantiBot
+
+E' necessario disporre di
+* una chiave per l'utilizzo delle API di Google Shortner
+* l'ID di un Bot Telegram
+* un eventuale url per il webhook
+* una chiave per l'utilizzo delle API di MapQuest Routing
+
+Nel pacchetto è già reso disponibile un database alimentato (PrezziCarburanti): per aggiornare i dati occorre lanciare il comando 
+
+CreaPrezziCarburanti.sh
+
+disponibile nella sottocartella Dati
+
+
 ## Credits
 
 Ringraziamenti e credits vanno a:
 * Stefano Sabatini, per il suo lavoro iniziale da cui ho tratto spunto per l'idea
-* Matteo Tempestini, Francesco (Piersoft) Paolicelli e Gabriele Grillo da cui ho tratto il codice inziale e per il loro supporto via mail
+* Matteo Tempestini, Francesco (Piersoft) Paolicelli e Gabriele Grillo da cui ho tratto il codice iniziale e per il loro supporto via mail
 * Alessandro Furieri, per il suo grandissimo lavoro su Spatialite, data base open source che ho usato come tool per memorizzare i dati georiferiti, e per il suo paziente supporto online
 * Fabrizio Massara per la pazienza e supporto  nonche', per la condivisione del server su cui sta' girando il codice del bot in produzione
 
