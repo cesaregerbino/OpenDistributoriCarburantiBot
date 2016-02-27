@@ -5,7 +5,7 @@ INFORMAZIONI GENERALI
 
 Il codice di questo "bot" permette di ricercare il distributore di carburante piu' economico nell intorno di un punto di interesse o all'interno dell'area in un Comune italiano.
  
-Se non si puo', o non si vuole, fornire l'attuale posizione il bot prova lo stesso a dare una indicazione: se si fornisce il nome di un Comune italiano si indicherà il/i distributori più economici all'interno del territorio del Comune indicato e li si potra' comunque visualizzare su mappa.
+Se non si puo', o non si vuole, fornire l'attuale posizione il bot prova lo stesso a dare una indicazione: se si fornisce il nome di un Comune italiano si indicherÃ  il/i distributori piÃ¹ economici all'interno del territorio del Comune indicato e li si potra' comunque visualizzare su mappa.
 
 Per fornire la posizione e' sufficiente cliccare sulla graffetta che compare nella videata del telefono / smartphone  e poi selezionare l'opzione 'Posizione'.
 
@@ -36,19 +36,23 @@ L'abbreviazione delle url viene realizzata avvalendosi del servizio Google URL S
 ARCHITETTURA E DETTAGLI TECNICI
 ===============================
 
-Schematicamente l'architettura della soluzione è la seguente:
+Schematicamente l'architettura della soluzione Ã¨ la seguente:
+
+![alt tag](https://github.com/cesaregerbino/OpenDistributoriCarburantiBot/blob/master/Doc/DistributoriCarburanti.png)
+
+
 
    ----->>>> METTERE QUI SCHEMA ARCHITETTURALE <<<<<< -----
 
 Nel diagramma sono citati i vari componenti del sistema che:
 
-è ospitato su una macchina Ubuntu 14.0.4 LTS
+Ã¨ ospitato su una macchina Ubuntu 14.0.4 LTS
 utilizza come database SQLite3 + Spatialite 4.4.0
 implementa la logica di business in PHP 5
 si avvale di servizi di OpenStreetMap, OSM Buildings, Mapquest e Google ShortLink
 Si tratta di una soluzione che utilizza tutti software open source e attinge da servizi disponibili in rete.
 
-Per una soluzione più scalabile è possibile passare ad utilizzare POSTGRESQL con la sua estensione POSTGIS, non cambiando la logica di funzionamento.
+Per una soluzione piÃ¹ scalabile Ã¨ possibile passare ad utilizzare POSTGRESQL con la sua estensione POSTGIS, non cambiando la logica di funzionamento.
 
 Nel diagramma sono anche illustrati i passi delle diverse operazioni coinvolte e precisamente:
 
@@ -59,7 +63,7 @@ effettua le ricerche su DB (3)
 nell'elaborazione della risposta invoca i servizi di Google Shortlink per abbreviare le url (4)
 con un'operazione di sendMessage risponde (5)
 Telegram inoltra la risposta al client (6)
-l'utente può fruire dei diversi link contenuti nella risposta (7, 7a, 7b e 7c)
+l'utente puÃ² fruire dei diversi link contenuti nella risposta (7, 7a, 7b e 7c)
    
 Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx.
 
