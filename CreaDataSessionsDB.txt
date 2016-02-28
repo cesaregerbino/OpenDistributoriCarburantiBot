@@ -7,9 +7,14 @@ CREATE TABLE data_sessions(
 );
 
 CREATE TABLE access_numbers(
+  Date TEXT,
   Counter DOUBLE
 );
 
- INSERT INTO access_numbers (Counter) VALUES (0);
+ INSERT INTO access_numbers (Date, Counter) VALUES (2016-02-28,0);
 .quit
+
+
+
+
 

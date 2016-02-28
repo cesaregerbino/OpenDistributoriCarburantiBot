@@ -43,13 +43,17 @@
     function shell($telegram,$text,$chat_id,$user_id,$location,$reply_to_msg)
       {
 
+	date_default_timezone_set('Europe/Rome');
+	$today = date("Y-m-d H:i:s");
+	$today_str = (string)$today;
+
         $MAX_LENGTH = 4096;
         $base_path = BASE_PATH;
 
         //## Aggiorno il contatore degli accessi ...
         $access_counter = 0;
         $db_data_sessions = new SQLite3($base_path.'/DataSessionsDB');
-        $q="SELECT * FROM access_numbers";
+        $q="SELECT * FROM access_numbers WHERE Date = '".$today_str."'";
         try {
              $stmt = $db_data_sessions->prepare($q);
              $results = $stmt->execute();
@@ -59,7 +63,7 @@
 
              $access_counter = $access_counter + 1;
 
-             $update = "UPDATE access_numbers SET Counter=?";
+             $update = "UPDATE access_numbers SET Counter=? WHERE Date = '".$today_str."'";
              $stmt = $db_data_sessions->prepare($update);
 
              //## Bind parameters to statement variables
@@ -73,8 +77,6 @@
         }
         $db_data_sessions = null;
 
-	date_default_timezone_set('Europe/Rome');
-	$today = date("Y-m-d H:i:s");
 
         $my_lat = 0;
         $my_lon = 0;
