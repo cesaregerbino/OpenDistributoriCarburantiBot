@@ -106,7 +106,7 @@ I dati sono aggiornati giornalmente dalle ore 9.00.\n
 E' possibile visualizzare questo messaggio in qualsiasi momento scrivendo /start.\n
 Altri comandi disponibili sono /info e /credits.\n
 Questo bot e' stato realizzato a titolo sperimentale  da Cesare Gerbino (cesare.gerbino@gmail.com)\n
-Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx\n";
+Per maggiori dettagli https://cesaregerbino.wordpress.com/2016/02/28/opendistributoricarburantibot-risparmiare-sul-pieno-di-carburante-con-telegram/\n";
 		$content = array('chat_id' => $chat_id, 'text' => $reply,'disable_web_page_preview'=>true);
 		$telegram->sendMessage($content);
 		$log=$today. ";new chat started;" .$chat_id. "\n";
@@ -130,7 +130,7 @@ Il calcolo dei percorsi viene realizzato avvalendosi del servizio di routing di 
 L'abbreviazione delle url viene realizzata avvalendosi del servizio Google URL Shortener (rif. https://goo.gl/)\n 
 Il codice dell'applicazione e' disponibile al seguente url https://github.com/cesaregerbino/OpenDistributoriCarburantiBot con licenza Licenza MIT Copyright (c) [2014] (rif. https://it.wikipedia.org/wiki/Licenza_MIT)\n
 I comandi disponibili sono: /start, /info e /credits.\n
-Per maggiori dettagli http://cesaregerbino.wordpress.com/xxxxxxxxxxxx\n";
+Per maggiori dettagli https://cesaregerbino.wordpress.com/2016/02/28/opendistributoricarburantibot-come-e-fatto-dentro/\n";
 		$content = array('chat_id' => $chat_id, 'text' => $reply,'disable_web_page_preview'=>true);
 		$telegram->sendMessage($content);
 		$log=$today. ";new chat started;" .$chat_id. "\n";
