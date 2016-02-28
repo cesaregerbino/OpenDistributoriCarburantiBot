@@ -3,6 +3,10 @@
    * Update data in access_numbers table
    * Author: Cesare Gerbino 
   */
+
+  include("settings_t.php");
+
+  $base_path = BASE_PATH;
   
   date_default_timezone_set('Europe/Rome');
   $today = (string)date("Y-m-d");

@@ -11,7 +11,7 @@ CREATE TABLE access_numbers(
   Counter DOUBLE
 );
 
- INSERT INTO access_numbers (Date, Counter) VALUES (2016-02-28,0);
+ INSERT INTO access_numbers (Date, Counter) VALUES ('2016-02-28',0);
 .quit
 
 

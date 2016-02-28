@@ -45,7 +45,7 @@
 
 	date_default_timezone_set('Europe/Rome');
 	$today = date("Y-m-d H:i:s");
-	$today_str = (string)$today;
+	$today_str = (string)date("Y-m-d");
 
         $MAX_LENGTH = 4096;
         $base_path = BASE_PATH;
