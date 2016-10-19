@@ -101,5 +101,4 @@ Ringraziamenti e credits vanno a:
 
 Questo bot e' stato realizzato a titolo sperimentale  da Cesare Gerbino (cesare.gerbino@gmail.com).
 
-Il codice dell'applicazione e' disponibile con licenza Licenza MIT Copyright (c) [2014] (rif. https://it.wikipedia.org/wiki/Licenza_MIT)
-
+Il codice dell'applicazione e' disponibile con licenza [Licenza MIT] (https://opensource.org/licenses/MIT) Copyright (c) [2014] - rif. [https://it.wikipedia.org/wiki/Licenza_MIT] (https://it.wikipedia.org/wiki/Licenza_MIT)
